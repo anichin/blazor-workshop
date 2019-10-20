@@ -23,6 +23,12 @@
 
         showingConfigureDialog = true;
     }
+
+    void CancelConfigurePizzaDialog()
+    {
+        configuringPizza = null;
+        showingConfigureDialog = false;
+    }
 }
 
 <div class="main">
@@ -45,5 +51,5 @@
 
 @if (showingConfigureDialog)
 {
-    <ConfigurePizzaDialog Pizza="configuringPizza" />
+    <ConfigurePizzaDialog Pizza="configuringPizza" OnCancel="CancelConfigurePizzaDialog"/>
 }
